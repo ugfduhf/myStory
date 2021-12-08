@@ -54,7 +54,7 @@ class LoginActivity : AppCompatActivity() {
         }
 
 }
-    private fun checkFields(){
+    private fun checkFields(){    // this fanction is stop
       btnLogin?.setOnClickListener {
          if (editTextUserName?.text?.isEmpty() == true ){
           editTextUserName?.setError("Enter your email")
