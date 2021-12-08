@@ -9,11 +9,13 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
+import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity() {
     private var editText:TextView? = null
     private var drawerLayout:DrawerLayout?=null
     private var toolbar:Toolbar?=null
+    private var navigationView:NavigationView?=null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -28,6 +30,12 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         setDrawer()
+        updateEmailInHeader(email!!)
+    }
+    private fun updateEmailInHeader(email:String){
+        val headerView= navigationView?.getHeaderView(0)
+        val textViewEmail= headerView?.findViewById<TextView>(R.id.tvEmail1Profile)
+        textViewEmail?.text = email
     }
     private fun setDrawer(){
 var toggle= ActionBarDrawerToggle(this,drawerLayout,R.string.open,R.string.close)
@@ -48,5 +56,6 @@ var toggle= ActionBarDrawerToggle(this,drawerLayout,R.string.open,R.string.close
         editText=findViewById(R.id.tViewEmail)
         drawerLayout=findViewById(R.id.drawer)
         toolbar=findViewById(R.id.toolbar)
+        navigationView=findViewById(R.id.navView)
     }
 }
