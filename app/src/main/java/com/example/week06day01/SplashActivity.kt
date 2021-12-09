@@ -20,7 +20,7 @@ class SplashActivity : AppCompatActivity() {
         val i =Intent(this,LoginActivity::class.java)
         //the next code  use to delayed for code
         startActivity(i)
-        },4000)
+        },3000)
 
     }
 }

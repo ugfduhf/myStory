@@ -1,5 +1,6 @@
 package com.example.week06day01
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
@@ -21,16 +22,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         var email =intent.getStringExtra("email")
-
-
         connectView()
         editText?.text= email
-
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
         setDrawer()
         updateEmailInHeader(email!!)
+        drawerClicks()
     }
     private fun updateEmailInHeader(email:String){
         val headerView= navigationView?.getHeaderView(0)
@@ -57,5 +55,23 @@ var toggle= ActionBarDrawerToggle(this,drawerLayout,R.string.open,R.string.close
         drawerLayout=findViewById(R.id.drawer)
         toolbar=findViewById(R.id.toolbar)
         navigationView=findViewById(R.id.navView)
+    }
+    //specifies which line  click it
+    private fun drawerClicks(){
+     navigationView?.setNavigationItemSelectedListener {
+         when(it.itemId){
+             R.id.home -> {
+                 drawerLayout?.closeDrawer(GravityCompat.START)
+                 true
+             }
+             R.id.logout ->{
+                finish()
+                 val i = Intent(this,LoginActivity::class.java)
+                 startActivity(i)
+                 true
+             }
+             else -> true
+         }
+     }
     }
 }
