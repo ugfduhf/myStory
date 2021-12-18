@@ -10,6 +10,8 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -17,6 +19,9 @@ class MainActivity : AppCompatActivity() {
     private var drawerLayout:DrawerLayout?=null
     private var toolbar:Toolbar?=null
     private var navigationView:NavigationView?=null
+    private var recyclerView:RecyclerView?=null
+    private var floatingActionButton:FloatingActionButton?=null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -29,7 +34,11 @@ class MainActivity : AppCompatActivity() {
         setDrawer()
         updateEmailInHeader(email!!)
         drawerClicks()
+
+        openAddStoryActivity()
+        displayStories()
     }
+
     private fun updateEmailInHeader(email:String){
         val headerView= navigationView?.getHeaderView(0)
         val textViewEmail= headerView?.findViewById<TextView>(R.id.tvEmail1Profile)
@@ -55,6 +64,8 @@ var toggle= ActionBarDrawerToggle(this,drawerLayout,R.string.open,R.string.close
         drawerLayout=findViewById(R.id.drawer)
         toolbar=findViewById(R.id.toolbar)
         navigationView=findViewById(R.id.navView)
+        recyclerView=findViewById(R.id.storiesRecyclerView)
+        floatingActionButton=findViewById(R.id.btnAddStory)
     }
     //specifies which line  click it
     private fun drawerClicks(){
@@ -73,5 +84,26 @@ var toggle= ActionBarDrawerToggle(this,drawerLayout,R.string.open,R.string.close
              else -> true
          }
      }
+    }
+    private fun openAddStoryActivity(){
+        floatingActionButton?.setOnClickListener{
+            val i =Intent(this,AddStoryActivity::class.java)
+            startActivity(i)
+        }
+    }
+    private fun displayStories(){
+        val storiesArray =ArrayList<story>()
+        storiesArray.add(
+            story("this is my story ", "this is subtitle "
+            ,"Welcome to my story I will show you how O learnt")
+        )
+        storiesArray.add(story("this is my second story ", "this is subtitle "
+            ,"Welcome to my story I will show you how O learnt"))
+        storiesArray.add(story("this is my third story ", "this is subtitle "
+            ,"Welcome to my story I will show you how O learnt"))
+        storiesArray.add(story("this is my forth story ", "this is subtitle "
+            ,"Welcome to my fifth story I will show you how O learnt"))
+        val custemAdapter= CustemAdapter(storiesArray,this)
+        recyclerView?.adapter = custemAdapter
     }
 }
