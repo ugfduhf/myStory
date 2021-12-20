@@ -8,4 +8,9 @@
     <string name="logout">logout</string>
     <string name="open">open</string>
     <string name="close">close</string>
+    <string name="enter_title">Enter title</string>
+    <string name="enter_subtitle">Enter subtitle</string>
+    <string name="enter_description">Enter description here</string>
+    <string name="btn_add_description">add</string>
+
 </resources>

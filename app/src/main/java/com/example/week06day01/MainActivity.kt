@@ -26,17 +26,19 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var email =intent.getStringExtra("email")
+       var email =intent.getStringExtra("email")
+
         connectView()
         editText?.text= email
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         setDrawer()
-        updateEmailInHeader(email!!)
+       // updateEmailInHeader(email!!)
         drawerClicks()
 
         openAddStoryActivity()
         displayStories()
+
     }
 
     private fun updateEmailInHeader(email:String){
@@ -98,12 +100,26 @@ var toggle= ActionBarDrawerToggle(this,drawerLayout,R.string.open,R.string.close
             ,"Welcome to my story I will show you how O learnt")
         )
         storiesArray.add(story("this is my second story ", "this is subtitle "
-            ,"Welcome to my story I will show you how O learnt"))
+            ,"Welcome to my story I will show you how O learnt Welcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to " +
+                    "my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learntWelcome to my fifth story I will show you how O learnt"))
         storiesArray.add(story("this is my third story ", "this is subtitle "
             ,"Welcome to my story I will show you how O learnt"))
         storiesArray.add(story("this is my forth story ", "this is subtitle "
             ,"Welcome to my fifth story I will show you how O learnt"))
+
+
         val custemAdapter= CustemAdapter(storiesArray,this)
         recyclerView?.adapter = custemAdapter
+
+        if (intent.getStringExtra("title")!=null){
+            val title = intent.getStringExtra("title")
+            val subtitle = intent.getStringExtra("subTitle")
+            val desc = intent.getStringExtra("desc")
+
+            val  newStory = story(title!!,subtitle!!,desc!!)
+            storiesArray.add(newStory)
+
+            custemAdapter.notifyDataSetChanged()
+        }
     }
 }
