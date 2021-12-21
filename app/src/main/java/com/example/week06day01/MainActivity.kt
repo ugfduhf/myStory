@@ -33,7 +33,12 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         setDrawer()
-       // updateEmailInHeader(email!!)
+       // try {
+            updateEmailInHeader(email)
+        //}catch (e:NullPointerException){
+
+       // }
+
         drawerClicks()
 
         openAddStoryActivity()
@@ -41,7 +46,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun updateEmailInHeader(email:String){
+    private fun updateEmailInHeader(email:String?){
         val headerView= navigationView?.getHeaderView(0)
         val textViewEmail= headerView?.findViewById<TextView>(R.id.tvEmail1Profile)
         textViewEmail?.text = email
